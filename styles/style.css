@@ -16,6 +16,6 @@ body {
 .books-display {
     display: grid;
     min-height: 100vh;
-    grid: auto-flow 20rem / repeat(auto-fit, minmax(5rem, 1fr));
+    grid: auto-flow 20rem / repeat(auto-fit, minmax(20rem, 1fr));
     gap: 3rem;
 }
