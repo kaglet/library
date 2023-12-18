@@ -50,7 +50,9 @@ function clearBookDisplay(bookContainer) {
 }
 
 function updateBookIndices() {
-    
+    myLibrary.forEach((book, i) => {
+        book.id = i;
+    })
 }
 
 function displayBooks() {
