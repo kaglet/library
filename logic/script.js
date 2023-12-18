@@ -13,8 +13,12 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
 }
 
-function removeBookFromLibrary() {
-    // do stuff here
+function removeBookFromLibrary(id) {
+    myLibrary.splice(id, 1);
+}
+
+function displayBooks() {
+
 }
 
 Book.prototype.init = function (title, author, pageNum, isRead) {
@@ -40,3 +44,6 @@ Book.prototype.info = function () {
 };
 
 addBookToLibrary();
+console.dir(myLibrary);
+removeBookFromLibrary(0);
+console.dir(myLibrary);
