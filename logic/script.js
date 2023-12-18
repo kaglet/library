@@ -55,28 +55,6 @@ function updateBookIndices() {
     })
 }
 
-function displayBooks() {
-    myLibrary.forEach((book, i) => {
-        let card = document.createElement('section');
-        let bookContainer = document.querySelector('.books-display');
-        card.setAttribute('data-id', i);
-        card.textContent = 'I am book ' + i + ' ';
-        card.textContent += book.info();
-
-        let deleteBtn = document.createElement('button');
-        deleteBtn.setAttribute('type', 'button');
-        deleteBtn.textContent = 'Delete';
-        deleteBtn.addEventListener('click', () => {
-            removeBookFromLibrary(i);
-        });
-
-        bookContainer.appendChild(card);
-        // create new element to hold book card
-        // it is styled in css but html is structured here just by nesting children then controlling layout
-        // create html examples or not needed since I know I can do it rather display and debug from here
-    });
-}
-
 Book.prototype.init = function (title, author, pageNum, isRead, id) {
     this.title = title;
     this.author = author;
