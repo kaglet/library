@@ -3,13 +3,13 @@ const myLibrary = [];
 
 function Book() {}
 
-function addBookToLibrary() {
-    let title = 'title';
-    let author = 'author';
-    let pageNum = 'pageNum';
-    let isRead = 'isRead';
+function createBook(title, author, pageNum, isRead) {
     let newBook = Object.create(Book.prototype);
-    newBook.init(title, author, pageNum, isRead);
+    return newBook.init(title, author, pageNum, isRead);
+}
+
+function addBookToLibrary() {
+    let newBook = createBook();
     myLibrary.push(newBook);
 }
 
@@ -18,7 +18,10 @@ function removeBookFromLibrary(id) {
 }
 
 function displayBooks() {
-
+    myLibrary.forEach(book => {
+        // create new element to hold book card
+        // it is styled in css but html is structured here
+    });
 }
 
 Book.prototype.init = function (title, author, pageNum, isRead) {
