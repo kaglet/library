@@ -20,7 +20,8 @@ function removeBookFromLibrary(id) {
 function displayBooks() {
     myLibrary.forEach(book => {
         // create new element to hold book card
-        // it is styled in css but html is structured here
+        // it is styled in css but html is structured here just by nesting children then controlling layout
+        // create html examples or not needed since I know I can do it rather display and debug from here
     });
 }
 
