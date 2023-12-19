@@ -23,6 +23,11 @@ body {
 
 .books-display > section::before {
     counter-increment: book;
-    content: counter(book) ' ';
+    content: counter(book) '. ';
     color: black;
+}
+
+button {
+    display: block;
+    margin: auto;
 }
