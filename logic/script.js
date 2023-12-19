@@ -32,9 +32,9 @@ function addBookToLibrary(newBook) {
 function removeBookFromLibrary(id) {
     myLibrary.splice(id, 1);
     let bookContainer = document.querySelector('.books-display');
-    let bookToRemove = bookContainer.querySelector(`[data-id]="${id}"`);
+    let bookToRemove = bookContainer.querySelector(`section[data-id="${id}"]`);
 
-    bookContainer.remove(bookToRemove);
+    bookContainer.removeChild(bookToRemove);
     updateBookIndices();
 }
 
@@ -42,6 +42,7 @@ function updateBookIndices() {
     myLibrary.forEach((book, i) => {
         book.id = i;
     })
+    // TODO: update indices visually optionally for debugging purposes or update with CSS counter
 }
 
 function clearBookDisplay(bookContainer) {

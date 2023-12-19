@@ -14,8 +14,15 @@ body {
 }
 
 .books-display {
+    counter-reset: book;
     display: grid;
     min-height: 100vh;
     grid: auto-flow 20rem / repeat(auto-fit, minmax(20rem, 1fr));
     gap: 3rem;
+}
+
+.books-display > section::before {
+    counter-increment: book;
+    content: "Hey my number is shown here: " counter(book);
+    color: black;
 }
