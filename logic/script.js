@@ -14,14 +14,13 @@ function addBookToLibrary(newBook) {
     let card = document.createElement('section');
     let bookContainer = document.querySelector('.books-display');
     card.setAttribute('data-id', newBook.id);
-    card.textContent = 'I am book ' + newBook.id + ' ';
     card.textContent += newBook.info();
 
     let deleteBtn = document.createElement('button');
     deleteBtn.setAttribute('type', 'button');
     deleteBtn.textContent = 'Delete';
     deleteBtn.addEventListener('click', () => {
-        removeBookFromLibrary(newBook.id);
+        removeBookFromLibrary(card.getAttribute('data-id'));
     });
 
     bookContainer.appendChild(card);
@@ -41,7 +40,12 @@ function removeBookFromLibrary(id) {
 function updateBookIndices() {
     myLibrary.forEach((book, i) => {
         book.id = i;
-    })
+    });
+    let cards = document.querySelectorAll('[data-id]');
+    cards.forEach((card, i) => {
+        card.setAttribute('data-id', i);
+    });
+    
     // TODO: update indices visually optionally for debugging purposes or update with CSS counter
 }
 

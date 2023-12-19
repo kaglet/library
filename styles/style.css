@@ -23,6 +23,6 @@ body {
 
 .books-display > section::before {
     counter-increment: book;
-    content: "Hey my number is shown here: " counter(book);
+    content: counter(book) ' ';
     color: black;
 }
