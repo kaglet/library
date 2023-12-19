@@ -8,15 +8,14 @@ function createBook(title, author, pageNum, isRead, id) {
     return newBook.init(title, author, pageNum, isRead, id);
 }
 
-function addBookToLibrary() {
-    let newBook = createBook('title', 'author', 'pageNum', true, myLibrary.length);
+function addBookToLibrary(newBook) {
     myLibrary.push(newBook);
 
     let card = document.createElement('section');
     let bookContainer = document.querySelector('.books-display');
     card.setAttribute('data-id', newBook.id);
     card.textContent = 'I am book ' + newBook.id + ' ';
-    card.textContent += book.info();
+    card.textContent += newBook.info();
 
     let deleteBtn = document.createElement('button');
     deleteBtn.setAttribute('type', 'button');
@@ -26,6 +25,7 @@ function addBookToLibrary() {
     });
 
     bookContainer.appendChild(card);
+    card.appendChild(deleteBtn);
     // DO NOT NEED TO UPDATE BOOK INDICES
 }
 
@@ -38,6 +38,12 @@ function removeBookFromLibrary(id) {
     updateBookIndices();
 }
 
+function updateBookIndices() {
+    myLibrary.forEach((book, i) => {
+        book.id = i;
+    })
+}
+
 function clearBookDisplay(bookContainer) {
     let cardsList = document.querySelectorAll('.books-display > section');
     if (cardsList.length === 0) {
@@ -47,12 +53,6 @@ function clearBookDisplay(bookContainer) {
     while (bookContainer.firstChild) {
         bookContainer.removeChild(grid.lastChild);
     }
-}
-
-function updateBookIndices() {
-    myLibrary.forEach((book, i) => {
-        book.id = i;
-    })
 }
 
 Book.prototype.init = function (title, author, pageNum, isRead, id) {
@@ -80,8 +80,6 @@ Book.prototype.info = function () {
 };
 
 for (let i = 0; i < 21; i++) {
-    addBookToLibrary();
+    let newBook = createBook('title', 'author', 'pageNum', true, myLibrary.length);
+    addBookToLibrary(newBook);
 }
-
-displayBooks();
-console.dir(myLibrary);
