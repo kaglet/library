@@ -86,6 +86,7 @@ Book.prototype.info = function () {
 
 let doneBtn = document.querySelector('.done');
 let modal = document.querySelector('.modal');
+let addBtn = document.querySelector('.add');
 
 doneBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -98,6 +99,11 @@ doneBtn.addEventListener('click', (e) => {
     addBookToLibrary(newBook);
 
     modal.classList.toggle('show-modal');
+});
+
+addBtn.addEventListener('click', (e) => {
+    modal.classList.toggle('show-modal');
+    // TODO: Disable button on show of modal
 });
 
 for (let i = 0; i < 21; i++) {
