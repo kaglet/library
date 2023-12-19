@@ -1,7 +1,7 @@
 
 const myLibrary = [];
 
-function Book() {}
+function Book() { }
 
 function createBook(title, author, pageNum, isRead, id) {
     let newBook = Object.create(Book.prototype);
@@ -45,7 +45,7 @@ function updateBookIndices() {
     cards.forEach((card, i) => {
         card.setAttribute('data-id', i);
     });
-    
+
     // TODO: update indices visually optionally for debugging purposes or update with CSS counter
 }
 
@@ -86,12 +86,20 @@ Book.prototype.info = function () {
 
 let doneBtn = document.querySelector('.done');
 let modal = document.querySelector('.modal');
+
 doneBtn.addEventListener('click', (e) => {
     e.preventDefault();
+
+    let title = document.getElementById('title').value;
+    let author = document.getElementById('author').value;
+    let pageNum = document.getElementById('pageNum').value;
+    let isRead = document.getElementById('isRead').value;
+    let newBook = createBook(title, author, pageNum, isRead, myLibrary.length);
+    addBookToLibrary(newBook);
+
     modal.classList.toggle('show-modal');
 });
 
 for (let i = 0; i < 21; i++) {
-    let newBook = createBook('title', 'author', 'pageNum', true, myLibrary.length);
-    addBookToLibrary(newBook);
+
 }

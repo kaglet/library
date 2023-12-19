@@ -17,8 +17,12 @@ body {
     counter-reset: book;
     display: grid;
     min-height: 100vh;
-    grid: auto-flow 20rem / repeat(auto-fit, minmax(20rem, 1fr));
+    grid: auto-flow 20rem / repeat(auto-fit, minmax(20rem, 21rem));
     gap: 3rem;
+}
+
+.books-display > section {
+    background-color: rgb(31, 53, 73);
 }
 
 .books-display > section::before {
