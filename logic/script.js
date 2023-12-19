@@ -84,6 +84,13 @@ Book.prototype.info = function () {
     return info;
 };
 
+let doneBtn = document.querySelector('.done');
+let modal = document.querySelector('.modal');
+doneBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.classList.toggle('show-modal');
+});
+
 for (let i = 0; i < 21; i++) {
     let newBook = createBook('title', 'author', 'pageNum', true, myLibrary.length);
     addBookToLibrary(newBook);
