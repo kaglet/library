@@ -85,24 +85,27 @@ Book.prototype.info = function () {
 };
 
 let doneBtn = document.querySelector('.done');
+let cancelBtn = document.querySelector('.cancel');
 let modal = document.querySelector('.modal');
 let addBtn = document.querySelector('.add');
+let dialog = document.querySelector('dialog');
 
 doneBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-
     let title = document.getElementById('title').value;
     let author = document.getElementById('author').value;
     let pageNum = document.getElementById('pageNum').value;
     let isRead = document.getElementById('isRead').value;
     let newBook = createBook(title, author, pageNum, isRead, myLibrary.length);
     addBookToLibrary(newBook);
+});
 
-    modal.classList.toggle('show-modal');
+cancelBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    dialog.close();
 });
 
 addBtn.addEventListener('click', (e) => {
-    modal.classList.toggle('show-modal');
+    dialog.showModal();
     // TODO: Disable button on show of modal
 });
 
