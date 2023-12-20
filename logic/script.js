@@ -90,17 +90,10 @@ let modal = document.querySelector('.modal');
 let addBtn = document.querySelector('.add');
 let dialog = document.querySelector('dialog');
 
-doneBtn.addEventListener('click', (e) => {
-    let title = document.getElementById('title').value;
-    let author = document.getElementById('author').value;
-    let pageNum = document.getElementById('pageNum').value;
-    let isRead = document.getElementById('isRead').value;
-    let newBook = createBook(title, author, pageNum, isRead, myLibrary.length);
-    addBookToLibrary(newBook);
-});
-
 cancelBtn.addEventListener('click', (e) => {
     e.preventDefault();
+    // default return value setting won't occur with prevent default
+    dialog.returnValue = 'cancel';
     dialog.close();
 });
 
@@ -109,6 +102,18 @@ addBtn.addEventListener('click', (e) => {
     // TODO: Disable button on show of modal
 });
 
-for (let i = 0; i < 21; i++) {
+dialog.addEventListener('close', (e) => {
+    switch (dialog.returnValue) {
+        case 'done':
+            let title = document.getElementById('title').value;
+            let author = document.getElementById('author').value;
+            let pageNum = document.getElementById('pageNum').value;
+            let isRead = document.getElementById('isRead').value;
+            let newBook = createBook(title, author, pageNum, isRead, myLibrary.length);
+            addBookToLibrary(newBook);
+            break;
 
-}
+        default:
+            break;
+    }
+});
