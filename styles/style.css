@@ -15,6 +15,8 @@
 .books-display > div, .books-display > section, dialog {
     border-radius: var(--border-radius);
     border: 2px double var(--main-accent);
+    color: var(--main-theme);
+    background-color: var(--main-accent);
 }
 
 input:not([type="checkbox"]) {
@@ -22,9 +24,16 @@ input:not([type="checkbox"]) {
 }
 
 h1 {
-    text-align: center;
     color: var(--main-accent);
-    font-size: 4rem;
+    font-size: 6rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    gap: 2rem;
+    background-color: var(--form-clr);
 }
 
 body {
@@ -41,11 +50,6 @@ body {
     grid: auto-flow 13rem / repeat(auto-fit, minmax(8rem, 10rem));
     gap: 3rem;
     padding: 2.5rem 15rem;
-}
-
-.books-display > section {
-    color: var(--main-accent);
-    background-color: #0a1728;
 }
 
 .books-display > section::before {
@@ -93,7 +97,6 @@ button {
 .add {
     text-align: center;
     font-size: 3rem;
-    color: var(--main-accent);
     display: flex;
     align-items: center;
     justify-content: center;
