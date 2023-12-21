@@ -7,10 +7,17 @@
 
 :root {
     --main-accent: #F87060;
+    --main-theme: #102542;
     --border-radius: 0.4rem;
+    --form-clr: #0c1c33;
 }
 
-.books-display > div, .books-display > section {
+.books-display > div, .books-display > section, dialog {
+    border-radius: var(--border-radius);
+    border: 2px double var(--main-accent);
+}
+
+input:not([type="checkbox"]) {
     border-radius: var(--border-radius);
 }
 
@@ -23,7 +30,7 @@ h1 {
 body {
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(to bottom, #102542, #102542);
+    background-color: var(--main-theme);
     position: relative;
 }
 
@@ -31,13 +38,14 @@ body {
     flex: 1;
     counter-reset: book;
     display: grid;
-    grid: auto-flow 18rem / repeat(auto-fit, minmax(13rem, 15rem));
+    grid: auto-flow 13rem / repeat(auto-fit, minmax(8rem, 10rem));
     gap: 3rem;
     padding: 2.5rem 15rem;
 }
 
 .books-display > section {
-    background-color: rgb(31, 53, 73);
+    color: var(--main-accent);
+    background-color: #0a1728;
 }
 
 .books-display > section::before {
@@ -47,13 +55,30 @@ body {
 }
 
 button {
+    width: 50%;
+    appearance: none;
+    border: none;
+    font-size: inherit;
     display: block;
     margin: auto;
 }
 
+.modal-content button:first-of-type {
+    margin-top: 2rem;
+}
+
+.modal-content button {
+    margin-top: 1rem;
+    padding: 0.3rem;
+    background-color: var(--main-accent);
+    color: var(--form-clr);
+    border: 2px solid var(--main-accent);
+}
+
 .form-inputs-layout {
+    gap: 1rem;
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
     grid-auto-rows: 1fr;
     align-items: center;
@@ -66,28 +91,46 @@ button {
 }
 
 .add {
-    font-size: 17rem;
+    text-align: center;
+    font-size: 3rem;
     color: var(--main-accent);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px double var(--main-accent);
 }
 
 /*Style dialog*/
 
 dialog::backdrop {
-    background-color: rgb(31, 53, 73, 0.72);
+    background-color: #040b14e6;
 }
 
 dialog {
+    color: var(--main-accent);
+    font-size: 1.6rem;
+    font-weight: 800;
     padding: 2.5rem;
-    border: none;
-    width: 25rem;
     min-height: 34rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: #0c1c33;
+}
+
+dialog h2 {
+    text-align: center;
+    margin-bottom: 2.1rem;
+    font-size: 3.2rem;
+}
+
+dialog input {
+    appearance: none;
+    background-color: #07101d;
+    color: white;
+    border: none;
+    padding: 0.8rem 0.4rem;
+    font-size: 1.3rem;
+    font-weight: 800;
 }
 
 /*End style dialog*/
