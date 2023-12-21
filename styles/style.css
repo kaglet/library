@@ -21,16 +21,19 @@ h1 {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background-image: linear-gradient(to bottom, #102542, #102542);
     position: relative;
 }
 
 .books-display {
+    flex: 1;
     counter-reset: book;
     display: grid;
-    min-height: 100vh;
     grid: auto-flow 18rem / repeat(auto-fit, minmax(13rem, 15rem));
     gap: 3rem;
+    padding: 2.5rem 15rem;
 }
 
 .books-display > section {
@@ -78,6 +81,7 @@ dialog::backdrop {
 }
 
 dialog {
+    padding: 2.5rem;
     border: none;
     width: 25rem;
     min-height: 34rem;
