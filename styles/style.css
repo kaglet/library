@@ -6,13 +6,22 @@
 }
 
 :root {
-    
+    --main-accent: #F87060;
+    --border-radius: 0.4rem;
+}
+
+.books-display > div, .books-display > section {
+    border-radius: var(--border-radius);
+}
+
+h1 {
+    text-align: center;
+    color: var(--main-accent);
+    font-size: 4rem;
 }
 
 body {
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    background-color: rgb(153, 153, 153);
+    background-image: linear-gradient(to bottom, #102542, #102542);
     position: relative;
 }
 
@@ -20,7 +29,7 @@ body {
     counter-reset: book;
     display: grid;
     min-height: 100vh;
-    grid: auto-flow 20rem / repeat(auto-fit, minmax(20rem, 21rem));
+    grid: auto-flow 18rem / repeat(auto-fit, minmax(13rem, 15rem));
     gap: 3rem;
 }
 
@@ -53,15 +62,13 @@ button {
     height: 1.3rem;
 }
 
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(238, 238, 238, 0.3);
-}
-
 .add {
-    font-size: 3rem;
-    align-self: center;
+    font-size: 17rem;
+    color: var(--main-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px double var(--main-accent);
 }
 
 /*Style dialog*/
