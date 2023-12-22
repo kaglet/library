@@ -3,9 +3,9 @@ const myLibrary = [];
 
 function Book() { }
 
-function createBook(title, author, pageNum, isRead, id) {
+function createBook(title, author, pageNum, isRead, id, url) {
     let newBook = Object.create(Book.prototype);
-    return newBook.init(title, author, pageNum, isRead, id);
+    return newBook.init(title, author, pageNum, isRead, id, url);
 }
 
 function addBookToLibrary(newBook) {
@@ -60,12 +60,13 @@ function clearBookDisplay(bookContainer) {
     }
 }
 
-Book.prototype.init = function (title, author, pageNum, isRead, id) {
+Book.prototype.init = function (title, author, pageNum, isRead, id, url) {
     this.title = title;
     this.author = author;
     this.pageNum = pageNum;
     this.isRead = isRead;
     this.id = id;
+    this.url = url;
     return this;
 };
 
