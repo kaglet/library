@@ -40,7 +40,11 @@ function addBookToLibrary(newBook) {
     readStatus.textContent = (newBook.isRead === true ? 'Read' : 'Not Read');
 
     let pic = document.createElement('div');
-    pic.textContent = 'No Cover Added';
+    if (url){
+        pic.style.backgroundImage = `url('${newBook.url}')`;
+    } else {
+        pic.textContent = 'No Cover Added';
+    }
 
     pic.classList.add('pic');
     editBtn.classList.add('edit');
@@ -55,6 +59,7 @@ function addBookToLibrary(newBook) {
     card.appendChild(deleteBtn);
     card.appendChild(title);
     card.appendChild(readStatus);
+
     // DO NOT NEED TO UPDATE BOOK INDICES
 }
 
@@ -149,3 +154,5 @@ dialog.addEventListener('close', (e) => {
             break;
     }
 });
+
+/* Eleantris https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/81NENdDCAGL._AC_UF1000,1000_QL80_.jpg */

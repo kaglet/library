@@ -29,6 +29,7 @@
 
 .pic, .read-status, .title {
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
 }
@@ -40,6 +41,8 @@
     background-color: var(--main-theme);
     border: 2px solid var(--main-accent);
     color: var(--main-accent);
+    object-fit: cover;
+    background-size: 100% 100%;
 }
 
 .edit {
@@ -113,7 +116,7 @@ body {
     content: counter(book) '. ';
     color: var(--main-accent);
     position: absolute;
-    left: -30px;
+    left: -50px;
     font-size: 1.7rem;
 }
 
