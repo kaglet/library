@@ -26,14 +26,18 @@ input:not([type="checkbox"]) {
 h1 {
     color: var(--main-accent);
     font-size: 6rem;
-    flex-grow: 1;
+    flex: 6;
     text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 header {
     display: flex;
     gap: 2rem;
     background-color: var(--form-clr);
+    padding: 1rem 1rem;
 }
 
 body {
@@ -58,7 +62,7 @@ body {
     color: black;
 }
 
-button {
+dialog button, .books-display button {
     width: 50%;
     appearance: none;
     border: none;
@@ -71,12 +75,19 @@ button {
     margin-top: 2rem;
 }
 
-.modal-content button {
+.modal-content button, header button {
     margin-top: 1rem;
     padding: 0.3rem;
     background-color: var(--main-accent);
     color: var(--form-clr);
     border: 2px solid var(--main-accent);
+}
+
+header button {
+    align-self: center;
+    padding: 0.8rem 1rem;
+    font-size: 1.4rem;
+    flex: 1;
 }
 
 .form-inputs-layout {
@@ -96,10 +107,6 @@ button {
 
 .add {
     text-align: center;
-    font-size: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 /*Style dialog*/
