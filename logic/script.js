@@ -14,7 +14,7 @@ function addBookToLibrary(newBook) {
     let card = document.createElement('section');
     let bookContainer = document.querySelector('.books-display');
     card.setAttribute('data-id', newBook.id);
-    card.textContent += newBook.info();
+    card.classList.add('card');
 
     let deleteBtn = document.createElement('button');
     deleteBtn.setAttribute('type', 'button');
@@ -42,9 +42,15 @@ function addBookToLibrary(newBook) {
     let pic = document.createElement('div');
     pic.textContent = 'No Cover Added';
 
+    pic.classList.add('pic');
+    editBtn.classList.add('edit');
+    deleteBtn.classList.add('delete');
+    title.classList.add('title');
+    readStatus.classList.add('read-status');
+
     bookContainer.appendChild(card);
 
-    card.appendChild(title);
+    card.appendChild(pic);
     card.appendChild(editBtn);
     card.appendChild(deleteBtn);
     card.appendChild(title);

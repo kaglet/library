@@ -13,7 +13,57 @@
     --big-btn-font-size: 1.6rem;
 }
 
-.books-display > div, .books-display > section, dialog {
+.card > :nth-child(n) {
+    border-radius: var(--border-radius);
+    color: var(--main-theme);
+    background-color: var(--main-accent);
+}
+
+.card {
+    display: grid;
+    grid-template: 2fr 2fr 1fr / 2fr 1fr;
+    gap: 0.5rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.pic, .read-status, .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .pic {
+    grid-row: 1 / span 2;
+    grid-column: 1 / span 1;
+    display: flex;
+    background-color: var(--main-theme);
+    border: 2px solid var(--main-accent);
+    color: var(--main-accent);
+}
+
+.edit {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.delete {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.title {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.read-status {
+    grid-row: 3;
+    grid-column: 2;
+    text-align: center;
+}
+
+dialog {
     border-radius: var(--border-radius);
     border: 2px double var(--main-accent);
     color: var(--main-theme);
@@ -52,18 +102,22 @@ body {
     flex: 1;
     counter-reset: book;
     display: grid;
-    grid: auto-flow 13rem / repeat(auto-fit, minmax(8rem, 10rem));
-    gap: 3rem;
+    grid: auto-flow 20rem / repeat(auto-fit, minmax(16rem, 17rem));
+    gap: 5rem;
     padding: 2.5rem 15rem;
+    justify-content: center;
 }
 
 .books-display > section::before {
     counter-increment: book;
     content: counter(book) '. ';
-    color: black;
+    color: var(--main-accent);
+    position: absolute;
+    left: -30px;
+    font-size: 1.7rem;
 }
 
-dialog button, .books-display button {
+dialog button {
     width: 50%;
     appearance: none;
     border: none;
@@ -76,19 +130,22 @@ dialog button, .books-display button {
     margin-top: 2rem;
 }
 
-.modal-content button, header button {
-    margin-top: 1rem;
-    padding: 0.3rem;
+button {
     background-color: var(--main-accent);
     color: var(--form-clr);
     border: 2px solid var(--main-accent);
+}
+
+.modal-content button, header button {
+    margin-top: 1rem;
+    padding: 0.3rem;
 }
 
 i {
     width: 20px;
     height: 20px;
     font-size: 20px;
-    color: #07101d;
+    color: var(--main-theme);
 }
 
 header button {
