@@ -23,8 +23,32 @@ function addBookToLibrary(newBook) {
         removeBookFromLibrary(card.getAttribute('data-id'));
     });
 
+    let editBtn = document.createElement('button');
+    editBtn.setAttribute('type', 'button');
+    editBtn.addEventListener('click', () => {
+
+    });
+    editBtn.textContent = 'Edit';
+
+    deleteBtn.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+    editBtn.innerHTML = '<i class="fa-solid fa-pencil"></i>';
+
+    let title = document.createElement('h3');
+    title.textContent = newBook.title;
+
+    let readStatus = document.createElement('div');
+    readStatus.textContent = (newBook.isRead === true ? 'Read' : 'Not Read');
+
+    let pic = document.createElement('div');
+    pic.textContent = 'No Cover Added';
+
     bookContainer.appendChild(card);
+
+    card.appendChild(title);
+    card.appendChild(editBtn);
     card.appendChild(deleteBtn);
+    card.appendChild(title);
+    card.appendChild(readStatus);
     // DO NOT NEED TO UPDATE BOOK INDICES
 }
 
@@ -110,7 +134,8 @@ dialog.addEventListener('close', (e) => {
             let author = document.getElementById('author').value;
             let pageNum = document.getElementById('pageNum').value;
             let isRead = document.getElementById('isRead').value;
-            let newBook = createBook(title, author, pageNum, isRead, myLibrary.length);
+            let url = document.getElementById('url').value;
+            let newBook = createBook(title, author, pageNum, isRead, myLibrary.length, url);
             addBookToLibrary(newBook);
             break;
 

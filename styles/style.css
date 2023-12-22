@@ -84,6 +84,13 @@ dialog button, .books-display button {
     border: 2px solid var(--main-accent);
 }
 
+i {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    color: #07101d;
+}
+
 header button {
     padding: 0.8rem 1rem;
     font-size:var(--big-btn-font-size);
