@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto+Mono:wght@500;600&family=Roboto+Slab:wght@400;500;800&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: 'Josefin Sans' ,system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 *,
@@ -22,6 +25,7 @@
     border-radius: var(--border-radius);
     color: var(--main-theme);
     background-color: var(--main-accent);
+    padding: 0.4rem 0.4rem;
 }
 
 .card {
@@ -91,6 +95,7 @@ h1 {
     font-size: 6rem;
     text-align: center;
     flex: 1;
+    font-family: 'Roboto Mono', sans-serif;
 }
 
 header {
@@ -147,10 +152,16 @@ button {
     border: 2px solid var(--main-accent);
 }
 
-.modal-content button,
-header button {
+.modal-content button {
     margin-top: 1rem;
+}
+
+header button {
     padding: 0.3rem;
+}
+
+.modal-content button {
+    padding: 0.6rem;
 }
 
 i {
@@ -171,8 +182,9 @@ header button {
 header .wrapper {
     display: flex;
     gap: 1rem;
-    margin: auto;
+    margin: 0 auto;
     min-width: max-content;
+    align-items: center;
 }
 
 .form-inputs-layout {
@@ -265,8 +277,8 @@ input[type="checkbox"]:focus {
 
 button:hover {
     background-color: #fa7e70;
-    border-color: #fc8080;
-    box-shadow: inset 0 0 20px #fc8080, inset 0 0 30px #d56b6b, 0 0 50px #fc8080;
+    border-color: #fc7171;
+    box-shadow: inset 0 0 20px #fc7171, inset 0 0 30px #d56b6b, 0 0 40px #fc7171;
 }
 
 button:active {
