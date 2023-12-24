@@ -31,7 +31,7 @@ function addBookToLibrary(newBook) {
         document.getElementById('title').value = newBook.title;
         document.getElementById('author').value = newBook.author;
         document.getElementById('pageNum').value = newBook.pageNum;
-        document.getElementById('isRead').value = newBook.isRead;
+        document.getElementById('isRead').checked = newBook.isRead;
         document.getElementById('url').value = newBook.url;
         dialog.returnValue = card.getAttribute('data-id');
     });
@@ -183,7 +183,7 @@ dialog.addEventListener('close', (e) => {
     let titleInput = document.querySelector('.modal-content #title').value;
     let authorInput = document.querySelector('.modal-content #author').value;
     let pageNumInput = document.querySelector('.modal-content #pageNum').value;
-    let isReadInput = document.querySelector('.modal-content #isRead').value;
+    let isReadInput = document.querySelector('.modal-content #isRead').checked;
     let urlInput = document.querySelector('.modal-content #url').value;
 
     if (dialog.returnValue === 'done') {
