@@ -82,17 +82,16 @@ h1 {
     color: var(--main-accent);
     font-size: 6rem;
     text-align: center;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    display: inline-block;
+    flex: 1;
 }
 
 header {
     gap: 2rem;
     background-color: var(--form-clr);
-    padding: 1rem 1rem;
-    position: relative;
+    padding: 1rem 4.5rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 body {
@@ -163,10 +162,7 @@ header button {
 header .wrapper {
     display: flex;
     gap: 1rem;
-    position: absolute;
-    right: 6rem;
-    top: 50%;
-    transform: translateY(-50%);
+    margin: auto;
     min-width: max-content;
 }
 
