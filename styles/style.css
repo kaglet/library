@@ -21,7 +21,7 @@
 
 .card {
     display: grid;
-    grid-template: 2fr 2fr 1fr / 2fr 1fr;
+    grid-template: 4fr 4fr 1fr 1fr / 2fr 1fr;
     gap: 0.5rem;
     font-weight: 700;
     position: relative;
@@ -106,7 +106,7 @@ body {
     flex: 1;
     counter-reset: book;
     display: grid;
-    grid: auto-flow 20rem / repeat(auto-fit, minmax(16rem, 17rem));
+    grid: auto-flow 24rem / repeat(auto-fit, minmax(16rem, 17rem));
     gap: 5rem;
     padding: 2.5rem 15rem;
     justify-content: center;

@@ -201,8 +201,12 @@ dialog.addEventListener('close', (e) => {
         // edit card and edit book with form information
         let title = cardToEdit.querySelector('h3.title');
         title.textContent = bookToEdit.title;
-        // cardToEdit.querySelector('author').value;
-        // cardToEdit.querySelector('pageNum').value;
+
+        let author = cardToEdit.querySelector('div.author');
+        author.textContent = bookToEdit.author;
+        let pageNum = cardToEdit.querySelector('div.page-num');
+        pageNum.textContent = bookToEdit.pageNum + ' pages';
+
         let readStatus = cardToEdit.querySelector('button.read-status');
         readStatus.textContent = (bookToEdit.isRead === true ? 'Read' : 'Not Read');
 
