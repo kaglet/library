@@ -189,7 +189,7 @@ dialog.addEventListener('close', (e) => {
     if (dialog.returnValue === 'done') {
         let newBook = createBook(titleInput, authorInput, pageNumInput, isReadInput, myLibrary.length, urlInput);
         addBookToLibrary(newBook);
-    } else if (typeof +dialog.returnValue === "number") {
+    } else if (typeof +dialog.returnValue === "number" && !isNaN(+dialog.returnValue)) {
         let bookID = +dialog.returnValue;
         let bookToEdit = myLibrary[bookID];
 
