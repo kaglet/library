@@ -260,3 +260,19 @@ input[type="checkbox"]:focus {
     outline: max(2px, 0.15em) solid white;
     outline-offset: max(1px, 0.05em);
 }
+
+/*End checkbox styling*/
+
+button:hover {
+    background-color: #fa7e70;
+    border-color: #fc8080;
+    box-shadow: inset 0 0 20px #fc8080, inset 0 0 30px #d56b6b, 0 0 50px #fc8080;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button {
+    transition: transform 0.05s ease-in;
+}
