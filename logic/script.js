@@ -43,7 +43,7 @@ function addBookToLibrary(newBook) {
     let title = document.createElement('h3');
     title.textContent = newBook.title;
 
-    let readStatus = document.createElement('div');
+    let readStatus = document.createElement('button');
     readStatus.textContent = (newBook.isRead === true ? 'Read' : 'Not Read');
 
     let pic = document.createElement('div');
@@ -55,11 +55,19 @@ function addBookToLibrary(newBook) {
         pic.style.backgroundImage = `none`;
     }
 
+    let author = document.createElement('div');
+    author.textContent = newBook.author;
+    let pageNum = document.createElement('div');
+    pageNum.textContent = newBook.pageNum + ' pages';
+
     pic.classList.add('pic');
     editBtn.classList.add('edit');
     deleteBtn.classList.add('delete');
     title.classList.add('title');
     readStatus.classList.add('read-status');
+    author.classList.add('author');
+    pageNum.classList.add('page-num');
+    
 
     bookContainer.appendChild(card);
 
@@ -68,6 +76,8 @@ function addBookToLibrary(newBook) {
     card.appendChild(deleteBtn);
     card.appendChild(title);
     card.appendChild(readStatus);
+    card.appendChild(author);
+    card.appendChild(pageNum);
 
     // DO NOT NEED TO UPDATE BOOK INDICES
 }
@@ -193,7 +203,7 @@ dialog.addEventListener('close', (e) => {
         title.textContent = bookToEdit.title;
         // cardToEdit.querySelector('author').value;
         // cardToEdit.querySelector('pageNum').value;
-        let readStatus = cardToEdit.querySelector('div.read-status');
+        let readStatus = cardToEdit.querySelector('button.read-status');
         readStatus.textContent = (bookToEdit.isRead === true ? 'Read' : 'Not Read');
 
         let pic = cardToEdit.querySelector('div.pic');
