@@ -45,6 +45,10 @@ function addBookToLibrary(newBook) {
 
     let readStatus = document.createElement('button');
     readStatus.textContent = (newBook.isRead === true ? 'Read' : 'Not Read');
+    readStatus.addEventListener('click', () => {
+        newBook.isRead = newBook.isRead === true ? false : true;
+        readStatus.textContent = (newBook.isRead === true ? 'Read' : 'Not Read');
+    });
 
     let pic = document.createElement('div');
     if (newBook.url){
