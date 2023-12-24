@@ -211,7 +211,7 @@ dialog.addEventListener('close', (e) => {
 
 let demoBtn = document.querySelector('.demo');
 demoBtn.addEventListener('click', () => {
-    demoLibrary = [
+    let demoLibrary = [
         createBook("Mistborn: The Final Empire", "Brandon Sanderson", 537, true, 0, "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1617768316i/68428.jpg"),
         createBook("A Game of Thrones", "George R. R. Martin", 801, false, 1, "https://www.dymocks.com.au/Pages/ImageHandler.ashx?q=9780006479888&w=&h=570"),
         createBook('The Outsiders', 'S. E. Hinton', 192, true, 2, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1442129426i/231804.jpg'),
@@ -229,7 +229,13 @@ demoBtn.addEventListener('click', () => {
         createBook('The Institute', 'Stephen King', 561, false, 14, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1549241208i/43798285.jpg'),
     ];
 
+    let bookContainer = document.querySelector('.books-display');
+    myLibrary = [];
+    while (bookContainer.firstChild) {
+        bookContainer.removeChild(bookContainer.lastChild);
+    }
     for (let i = 0; i < demoLibrary.length; i++) {
+        console.log(myLibrary);
         addBookToLibrary(demoLibrary[i]);
     }
 });
