@@ -95,6 +95,14 @@ function clearBookDisplay(bookContainer) {
     }
 }
 
+function clearForm() {
+    document.getElementById('title').value = "";
+    document.getElementById('author').value = "";
+    document.getElementById('pageNum').value = "";
+    document.getElementById('isRead').checked = false;
+    document.getElementById('url').value = "";
+}
+
 Book.prototype.init = function (title, author, pageNum, isRead, id, url) {
     this.title = title;
     this.author = author;
@@ -134,6 +142,7 @@ cancelBtn.addEventListener('click', (e) => {
 });
 
 addBtn.addEventListener('click', (e) => {
+    clearForm();
     dialog.showModal();
     // TODO: Disable button on show of modal
 });
