@@ -146,7 +146,8 @@ cancelBtn.addEventListener('click', (e) => {
 
 doneBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    if (dialog.returnValue == "" || typeof +dialog.returnValue !== "number") {
+    let doneModeDetected = dialog.returnValue == "" || typeof +dialog.returnValue !== "number";
+    if (doneModeDetected) {
         dialog.returnValue = 'done';
     } // else dialog return value is already a card number of the card number and book id to be edited
     dialog.close();
@@ -174,7 +175,7 @@ dialog.addEventListener('close', (e) => {
             if (typeof +dialog.returnValue === "number") {
                 console.log("I was an edited card!");
 
-                dialog.returnValue = 'done';
+                dialog.returnValue = "";
             }
             break;
     }
