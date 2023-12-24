@@ -1,8 +1,13 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
 }
 
 :root {
@@ -13,7 +18,7 @@
     --big-btn-font-size: 1.6rem;
 }
 
-.card > :nth-child(n) {
+.card> :nth-child(n) {
     border-radius: var(--border-radius);
     color: var(--main-theme);
     background-color: var(--main-accent);
@@ -27,7 +32,10 @@
     position: relative;
 }
 
-.card > section, .card > div, .card > button, .card > h3 {
+.card>section,
+.card>div,
+.card>button,
+.card>h3 {
     display: flex;
     text-align: center;
     align-items: center;
@@ -111,7 +119,7 @@ body {
     justify-content: center;
 }
 
-.books-display > section::before {
+.books-display>section::before {
     counter-increment: book;
     content: counter(book) '. ';
     color: var(--main-accent);
@@ -139,7 +147,8 @@ button {
     border: 2px solid var(--main-accent);
 }
 
-.modal-content button, header button {
+.modal-content button,
+header button {
     margin-top: 1rem;
     padding: 0.3rem;
 }
@@ -153,7 +162,7 @@ i {
 
 header button {
     padding: 0.8rem 1rem;
-    font-size:var(--big-btn-font-size);
+    font-size: var(--big-btn-font-size);
     flex: 1;
     align-items: center;
     min-width: 15rem;
@@ -220,3 +229,34 @@ dialog input {
 }
 
 /*End style dialog*/
+
+/*Style checkbox*/
+
+input[type="checkbox"] {
+    transform: translateY(-0.075em);
+    -webkit-appearance: none;
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--main-accent);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+    outline: max(2px, 0.15em) solid white;
+    outline-offset: max(1px, 0.05em);
+}
