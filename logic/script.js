@@ -44,9 +44,11 @@ function addBookToLibrary(newBook) {
 
     let pic = document.createElement('div');
     if (newBook.url){
+        pic.textContent = '';
         pic.style.backgroundImage = `url('${newBook.url}')`;
     } else {
         pic.textContent = 'No Cover Added';
+        pic.style.backgroundImage = `none`;
     }
 
     pic.classList.add('pic');
@@ -192,9 +194,11 @@ dialog.addEventListener('close', (e) => {
 
         let pic = cardToEdit.querySelector('div.pic');
         if (bookToEdit.url){
+            pic.textContent = '';
             pic.style.backgroundImage = `url('${bookToEdit.url}')`;
         } else {
             pic.textContent = 'No Cover Added';
+            pic.style.backgroundImage = `none`;
         }
         
         dialog.returnValue = "";
