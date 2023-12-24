@@ -24,9 +24,12 @@ function addBookToLibrary(newBook) {
     });
 
     let editBtn = document.createElement('button');
+    let dialog = document.querySelector('dialog');
     editBtn.setAttribute('type', 'button');
     editBtn.addEventListener('click', () => {
-
+        dialog.showModal();
+        document.getElementById('title').value = newBook.title;
+        dialog.returnValue = card.getAttribute('data-id');
     });
     editBtn.textContent = 'Edit';
 
@@ -141,6 +144,14 @@ cancelBtn.addEventListener('click', (e) => {
     dialog.close();
 });
 
+doneBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (dialog.returnValue == "" || typeof +dialog.returnValue !== "number") {
+        dialog.returnValue = 'done';
+    } // else dialog return value is already a card number of the card number and book id to be edited
+    dialog.close();
+});
+
 addBtn.addEventListener('click', (e) => {
     clearForm();
     dialog.showModal();
@@ -160,6 +171,11 @@ dialog.addEventListener('close', (e) => {
             break;
 
         default:
+            if (typeof +dialog.returnValue === "number") {
+                console.log("I was an edited card!");
+
+                dialog.returnValue = 'done';
+            }
             break;
     }
 });
