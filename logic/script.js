@@ -43,7 +43,7 @@ function addBookToLibrary(newBook) {
     readStatus.textContent = (newBook.isRead === true ? 'Read' : 'Not Read');
 
     let pic = document.createElement('div');
-    if (url){
+    if (newBook.url){
         pic.style.backgroundImage = `url('${newBook.url}')`;
     } else {
         pic.textContent = 'No Cover Added';
@@ -160,24 +160,44 @@ addBtn.addEventListener('click', (e) => {
 });
 
 dialog.addEventListener('close', (e) => {
-    switch (dialog.returnValue) {
-        case 'done':
-            let title = document.getElementById('title').value;
-            let author = document.getElementById('author').value;
-            let pageNum = document.getElementById('pageNum').value;
-            let isRead = document.getElementById('isRead').value;
-            let url = document.getElementById('url').value;
-            let newBook = createBook(title, author, pageNum, isRead, myLibrary.length, url);
-            addBookToLibrary(newBook);
-            break;
+    let titleInput = document.querySelector('.modal-content #title').value;
+    let authorInput = document.querySelector('.modal-content #author').value;
+    let pageNumInput = document.querySelector('.modal-content #pageNum').value;
+    let isReadInput = document.querySelector('.modal-content #isRead').value;
+    let urlInput = document.querySelector('.modal-content #url').value;
 
-        default:
-            if (typeof +dialog.returnValue === "number") {
-                console.log("I was an edited card!");
+    if (dialog.returnValue === 'done') {
+        let newBook = createBook(titleInput, authorInput, pageNumInput, isReadInput, myLibrary.length, urlInput);
+        addBookToLibrary(newBook);
+    } else if (typeof +dialog.returnValue === "number") {
+        let bookID = +dialog.returnValue;
+        let bookToEdit = myLibrary[bookID];
 
-                dialog.returnValue = "";
-            }
-            break;
+        bookToEdit.title = titleInput;
+        bookToEdit.author = authorInput;
+        bookToEdit.pageNum = pageNumInput;
+        bookToEdit.isRead = isReadInput;
+        bookToEdit.url = urlInput;
+
+        let bookContainer = document.querySelector('.books-display');
+        let cardToEdit = bookContainer.querySelector(`section[data-id="${bookID}"]`);
+        // Found card with that id now edit
+        // edit card and edit book with form information
+        let title = cardToEdit.querySelector('h3.title');
+        title.textContent = bookToEdit.title;
+        // cardToEdit.querySelector('author').value;
+        // cardToEdit.querySelector('pageNum').value;
+        let readStatus = cardToEdit.querySelector('div.read-status');
+        readStatus.textContent = (bookToEdit.isRead === true ? 'Read' : 'Not Read');
+
+        let pic = cardToEdit.querySelector('div.pic');
+        if (bookToEdit.url){
+            pic.style.backgroundImage = `url('${bookToEdit.url}')`;
+        } else {
+            pic.textContent = 'No Cover Added';
+        }
+        
+        dialog.returnValue = "";
     }
 });
 
