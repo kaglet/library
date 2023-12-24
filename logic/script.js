@@ -1,5 +1,5 @@
 
-const myLibrary = [];
+let myLibrary = [];
 
 function Book() { }
 
@@ -209,26 +209,31 @@ dialog.addEventListener('close', (e) => {
     }
 });
 
-const demoLibrary = [
-    createBook("Mistborn: The Final Empire", "Brandon Sanderson", 537, true, 0, "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1617768316i/68428.jpg"),
-    createBook("A Game of Thrones", "George R. R. Martin", 801, false, 1, "https://www.dymocks.com.au/Pages/ImageHandler.ashx?q=9780006479888&w=&h=570"),
-    createBook('The Outsiders', 'S. E. Hinton', 192, true, 2, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1442129426i/231804.jpg'),
-    createBook('The Handmaid\'s Tale', 'Margaret Atwood', 311, true, 3, 'https://m.media-amazon.com/images/I/71mfL5OGNNL._AC_UF894,1000_QL80_.jpg'),
-    createBook('The Girl with All the Gifts', 'M. R. Carey', 460, true, 4, 'https://books.google.co.za/books/content?id=ujuYj2OiqfAC&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U3a8P2DDXN3NTTlm60mDGkJKsAGGg&w=1280'),
-    createBook('Bird Box', 'Josh Malerman', 270, false, 5, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1570393096i/44646576.jpg'),
-    createBook('The Paper Mache Man', 'Jesse Pullins', 63, false, 6, 'https://m.media-amazon.com/images/I/715rXjbxCLL._SY466_.jpg'),
-    createBook('Annihilation', 'Jeff VandaMeer', 195, false, 7, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1403941587i/17934530.jpg'),
-    createBook('Legend', 'Marie Lu', 318, true, 8, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1460224537i/29863662.jpg'),
-    createBook('The Hunger Games', 'Suzanne Collins', 384, true, 9, 'https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/614SwlZNtJL._AC_UF1000,1000_QL80_.jpg'),
-    createBook('The Power of Five: Raven\'s Gate', 'Anthony Horowitz', 304, true, 10, 'https://m.media-amazon.com/images/I/91wENOjV7RL._SY466_.jpg'),
-    createBook('Firefight', 'Brandon Sanderson', 341, true, 11, 'https://www.wordsworth.co.za/cdn/shop/products/96740_611ed506724ed2.22620491_9781473217706_7d7a2125-8ef4-499f-a6d0-a75fcb764558_260x400.jpg?v=1676304524'),
-    createBook('Uglies', 'Scott Westerfield', 432, true, 12, 'https://scottwesterfeld.com/wp/wp-content/uploads/2009/07/uglies1.jpg'),
-    createBook('Infected', 'Scott Sigler', 342, false, 13, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1439359012i/2331954.jpg'),
-    createBook('The Institute', 'Stephen King', 561, false, 14, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1549241208i/43798285.jpg'),
-];
+let demoBtn = document.querySelector('.demo');
+demoBtn.addEventListener('click', () => {
+    demoLibrary = [
+        createBook("Mistborn: The Final Empire", "Brandon Sanderson", 537, true, 0, "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1617768316i/68428.jpg"),
+        createBook("A Game of Thrones", "George R. R. Martin", 801, false, 1, "https://www.dymocks.com.au/Pages/ImageHandler.ashx?q=9780006479888&w=&h=570"),
+        createBook('The Outsiders', 'S. E. Hinton', 192, true, 2, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1442129426i/231804.jpg'),
+        createBook('The Handmaid\'s Tale', 'Margaret Atwood', 311, true, 3, 'https://m.media-amazon.com/images/I/71mfL5OGNNL._AC_UF894,1000_QL80_.jpg'),
+        createBook('The Girl with All the Gifts', 'M. R. Carey', 460, true, 4, 'https://books.google.co.za/books/content?id=ujuYj2OiqfAC&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U3a8P2DDXN3NTTlm60mDGkJKsAGGg&w=1280'),
+        createBook('Bird Box', 'Josh Malerman', 270, false, 5, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1570393096i/44646576.jpg'),
+        createBook('The Paper Mache Man', 'Jesse Pullins', 63, false, 6, 'https://m.media-amazon.com/images/I/715rXjbxCLL._SY466_.jpg'),
+        createBook('Annihilation', 'Jeff VandaMeer', 195, false, 7, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1403941587i/17934530.jpg'),
+        createBook('Legend', 'Marie Lu', 318, true, 8, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1460224537i/29863662.jpg'),
+        createBook('The Hunger Games', 'Suzanne Collins', 384, true, 9, 'https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/614SwlZNtJL._AC_UF1000,1000_QL80_.jpg'),
+        createBook('The Power of Five: Raven\'s Gate', 'Anthony Horowitz', 304, true, 10, 'https://m.media-amazon.com/images/I/91wENOjV7RL._SY466_.jpg'),
+        createBook('Firefight', 'Brandon Sanderson', 341, true, 11, 'https://www.wordsworth.co.za/cdn/shop/products/96740_611ed506724ed2.22620491_9781473217706_7d7a2125-8ef4-499f-a6d0-a75fcb764558_260x400.jpg?v=1676304524'),
+        createBook('Uglies', 'Scott Westerfield', 432, true, 12, 'https://scottwesterfeld.com/wp/wp-content/uploads/2009/07/uglies1.jpg'),
+        createBook('Infected', 'Scott Sigler', 342, false, 13, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1439359012i/2331954.jpg'),
+        createBook('The Institute', 'Stephen King', 561, false, 14, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1549241208i/43798285.jpg'),
+    ];
 
-for (let i = 0; i < demoLibrary.length; i++) {
-    addBookToLibrary(demoLibrary[i]);
-}
+    for (let i = 0; i < demoLibrary.length; i++) {
+        addBookToLibrary(demoLibrary[i]);
+    }
+});
+
+
 
 /* Eleantris https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/81NENdDCAGL._AC_UF1000,1000_QL80_.jpg */
