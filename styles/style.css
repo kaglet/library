@@ -269,7 +269,7 @@ input[type="checkbox"]:checked::before {
 }
 
 input[type="checkbox"]:focus {
-    outline: max(2px, 0.15em) solid white;
+    outline: 1.7px solid white;
     outline-offset: max(1px, 0.05em);
 }
 
