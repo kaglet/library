@@ -234,7 +234,7 @@ demoBtn.addEventListener('click', () => {
         createBook("A Game of Thrones", "George R. R. Martin", 801, false, 1, "https://www.dymocks.com.au/Pages/ImageHandler.ashx?q=9780006479888&w=&h=570"),
         createBook('The Outsiders', 'S. E. Hinton', 192, true, 2, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1442129426i/231804.jpg'),
         createBook('The Handmaid\'s Tale', 'Margaret Atwood', 311, true, 3, 'https://m.media-amazon.com/images/I/71mfL5OGNNL._AC_UF894,1000_QL80_.jpg'),
-        createBook('The Girl with All the Gifts', 'M. R. Carey', 460, true, 4, 'https://books.google.co.za/books/content?id=ujuYj2OiqfAC&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U3a8P2DDXN3NTTlm60mDGkJKsAGGg&w=1280'),
+        createBook('The Girl with All the Gifts', 'M. R. Carey', 460, true, 4, 'https://th.bing.com/th/id/OIP.FQPP_ZaYmwe7GdFaTEw1NAHaLo?rs=1&pid=ImgDetMain'),
         createBook('Bird Box', 'Josh Malerman', 270, false, 5, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1570393096i/44646576.jpg'),
         createBook('The Paper Mache Man', 'Jesse Pullins', 63, false, 6, 'https://m.media-amazon.com/images/I/715rXjbxCLL._SY466_.jpg'),
         createBook('Annihilation', 'Jeff VandaMeer', 195, false, 7, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1403941587i/17934530.jpg'),
