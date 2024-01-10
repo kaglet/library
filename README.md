@@ -1,6 +1,6 @@
 # library
 
-This is a personal library tool made as part of the open source web development course [The Odin Project](https://www.theodinproject.com).  This is the first assignment of the Intermediate Javascript section. It demonstrates skills in use of prototype's and prototypal chaining in constructing object's, and later will demonstrate skills in local/online storage once the API section of the course is covered.
+This is a personal library tool made as part of the open source web development course [The Odin Project](https://www.theodinproject.com).  This is the first assignment of the Intermediate Javascript section. It demonstrates skills learned of use of prototypes and prototypal chaining in constructing objects, and later will demonstrate skills in local/online storage once the API section of the course is covered.
 
 Find the live preview [here](https://kaglet.github.io/library/).
 
