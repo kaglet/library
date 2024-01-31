@@ -1,11 +1,9 @@
 
 let myLibrary = [];
 
-function Book() { }
-
 function createBook(title, author, pageNum, isRead, id, url) {
-    let newBook = Object.create(Book.prototype);
-    return newBook.init(title, author, pageNum, isRead, id, url);
+    let newBook = new Book(title, author, pageNum, isRead, id, url);
+    return newBook;
 }
 
 function addBookToLibrary(newBook) {
@@ -126,30 +124,31 @@ function clearForm() {
     document.getElementById('url').value = "";
 }
 
-Book.prototype.init = function (title, author, pageNum, isRead, id, url) {
-    this.title = title;
-    this.author = author;
-    this.pageNum = pageNum;
-    this.isRead = isRead;
-    this.id = id;
-    this.url = url;
-    return this;
-};
+class Book {
+    constructor(title, author, pageNum, isRead, id, url) {
+        this.title = title;
+        this.author = author;
+        this.pageNum = pageNum;
+        this.isRead = isRead;
+        this.id = id;
+        this.url = url;
+    }
 
-Book.prototype.read = function () {
-    this.isRead = true;
-};
+    read = () => {
+        this.isRead = true;
+    }
 
-Book.prototype.removeRead = function () {
-    this.isRead = false;
-};
+    removeRead = () => {
+        this.isRead = false;
+    };
 
-Book.prototype.info = function () {
-    let info = this.isRead ?
-        `${this.title} by ${this.author}, ${this.pageNum}, read!` :
-        `${this.title} by ${this.author}, ${this.pageNum}, not read yet`;
-    return info;
-};
+    info = function () {
+        let info = this.isRead ?
+            `${this.title} by ${this.author}, ${this.pageNum}, read!` :
+            `${this.title} by ${this.author}, ${this.pageNum}, not read yet`;
+        return info;
+    };
+} 
 
 let doneBtn = document.querySelector('.done');
 let cancelBtn = document.querySelector('.cancel');
