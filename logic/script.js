@@ -1,7 +1,7 @@
 
 import storageManager from "../storage/storage_manager.js";
 
-let initialBooks = !localStorage.getItem("library") ? [] : storageManager.getAllBooks();
+let initialBooks = !localStorage.getItem("library") || localStorage.getItem("library") == undefined ? [] : storageManager.getAllBooks();
 let myLibrary = [];
 
 initialBooks.forEach(book => {
@@ -58,6 +58,7 @@ function addBookToLibrary(newBook) {
     readStatus.addEventListener('click', () => {
         newBook.isRead = newBook.isRead === true ? false : true;
         readStatus.textContent = (newBook.isRead === true ? 'Read' : 'Not Read');
+        storageManager.saveChanges(myLibrary);
     });
 
     let pic = document.createElement('div');
