@@ -1,7 +1,12 @@
 
 import storageManager from "../storage/storage_manager.js";
 
-let myLibrary = true === true ? storageManager.getAllBooks() : [];
+let initialBooks = !localStorage.getItem("library") ? [] : storageManager.getAllBooks();
+let myLibrary = [];
+
+initialBooks.forEach(book => {
+    addBookToLibrary(book);
+});
 
 console.log("Library is ", myLibrary);
 
