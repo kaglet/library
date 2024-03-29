@@ -1,5 +1,9 @@
 
-let myLibrary = [];
+import storageManager from "../storage/storage_manager.js";
+
+let myLibrary = true === true ? storageManager.getAllBooks() : [];
+
+console.log("Library is ", myLibrary);
 
 function Book() { }
 
@@ -10,6 +14,7 @@ function createBook(title, author, pageNum, isRead, id, url) {
 
 function addBookToLibrary(newBook) {
     myLibrary.push(newBook);
+    storageManager.saveChanges(myLibrary);
 
     let card = document.createElement('section');
     let bookContainer = document.querySelector('.books-display');
@@ -93,6 +98,8 @@ function removeBookFromLibrary(id) {
 
     bookContainer.removeChild(bookToRemove);
     updateBookIndices();
+
+    storageManager.saveChanges(myLibrary);
 }
 
 function updateBookIndices() {
@@ -103,6 +110,8 @@ function updateBookIndices() {
     cards.forEach((card, i) => {
         card.setAttribute('data-id', i);
     });
+
+    storageManager.saveChanges(myLibrary);
 
     // TODO: update indices visually optionally for debugging purposes or update with CSS counter
 }
@@ -224,6 +233,8 @@ dialog.addEventListener('close', (e) => {
         }
         
         dialog.returnValue = "";
+
+        storageManager.saveChanges(myLibrary);
     }
 });
 
@@ -258,6 +269,4 @@ demoBtn.addEventListener('click', () => {
     }
 });
 
-
-
-/* Eleantris https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/81NENdDCAGL._AC_UF1000,1000_QL80_.jpg */
+export { Book };

@@ -1,0 +1,58 @@
+import { Book } from "../logic/script.js";
+
+let storageManager = function () {
+    // Do not perform any functionality if storage API is not available on user browser
+    // This check is used within the functionality not outside
+    // TODO: Need an alert error message at the beginning only once if storage is not available
+    const storageAvailable = (type) => {
+        let storage;
+        try {
+            storage = window[type];
+            const x = "__storage_test__";
+            storage.setItem(x, x);
+            storage.removeItem(x);
+            return true;
+        } catch (e) {
+            return (
+                e instanceof DOMException &&
+                // everything except Firefox
+                (e.code === 22 ||
+                    // Firefox
+                    e.code === 1014 ||
+                    // test name field too, because code might not be present
+                    // everything except Firefox
+                    e.name === "QuotaExceededError" ||
+                    // Firefox
+                    e.name === "NS_ERROR_DOM_QUOTA_REACHED") &&
+                // acknowledge QuotaExceededError only if there's something already stored
+                storage &&
+                storage.length !== 0
+            );
+        }
+    };
+
+    const saveChanges = (library) => {
+        if (!storageAvailable) return;
+
+        localStorage.setItem("library", JSON.stringify(library));
+
+        console.clear();
+        console.log('Changed lists', JSON.parse(localStorage.getItem('library')));
+    };
+
+    const attachFunctionsToBooks = () => {
+        let books = JSON.parse(localStorage.getItem("library"));
+        books.forEach(book => {
+            Object.setPrototypeOf(book, Book.prototype);
+        });
+        return books;
+    };
+
+    const getAllBooks = () => {
+        return attachFunctionsToBooks();
+    };
+
+    return { saveChanges, getAllBooks };
+}();
+
+export default storageManager;
