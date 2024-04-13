@@ -1,243 +1,247 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto+Mono:wght@500;600&family=Roboto+Slab:wght@400;500;800&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto+Mono:wght@500;600&family=Roboto+Slab:wght@400;500;800&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Josefin Sans' ,system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
-    --main-accent: #F87060;
-    --main-theme: #102542;
-    --border-radius: 0.4rem;
-    --form-clr: #0c1c33;
-    --big-btn-font-size: 1.6rem;
+  --main-accent: #f87060;
+  --main-theme: #102542;
+  --border-radius: 0.4rem;
+  --form-clr: #0c1c33;
+  --big-btn-font-size: 1.6rem;
 }
 
-.card> :nth-child(n) {
-    border-radius: var(--border-radius);
-    color: var(--main-theme);
-    background-color: var(--main-accent);
-    padding: 0.4rem 0.4rem;
+.card > :nth-child(n) {
+  border-radius: var(--border-radius);
+  color: var(--main-theme);
+  background-color: var(--main-accent);
+  padding: 0.4rem 0.4rem;
 }
 
 .card {
-    display: grid;
-    grid-template: 4fr 4fr 1fr 1fr / 2fr 1fr;
-    gap: 0.5rem;
-    font-weight: 700;
-    position: relative;
+  display: grid;
+  grid-template: 4fr 4fr 1fr 1fr / 2fr 1fr;
+  gap: 0.5rem;
+  font-weight: 700;
+  position: relative;
 }
 
-.card>section,
-.card>div,
-.card>button,
-.card>h3 {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+.card > section,
+.card > div,
+.card > button,
+.card > h3 {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .card .pic {
-    grid-row: 1 / span 2;
-    grid-column: 1 / span 1;
-    display: flex;
-    background-color: var(--main-theme);
-    border: 2px solid var(--main-accent);
-    color: var(--main-accent);
-    object-fit: cover;
-    background-size: 100% 100%;
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 1;
+  display: flex;
+  background-color: var(--main-theme);
+  border: 2px solid var(--main-accent);
+  color: var(--main-accent);
+  object-fit: cover;
+  background-size: 100% 100%;
 }
 
 .edit {
-    grid-row: 1;
-    grid-column: 2;
+  grid-row: 1;
+  grid-column: 2;
 }
 
 .delete {
-    grid-row: 2;
-    grid-column: 2;
+  grid-row: 2;
+  grid-column: 2;
 }
 
 .title {
-    grid-row: 3;
-    grid-column: 1;
+  grid-row: 3;
+  grid-column: 1;
 }
 
 .read-status {
-    grid-row: 3;
-    grid-column: 2;
-    text-align: center;
-    font: inherit;
+  grid-row: 3;
+  grid-column: 2;
+  text-align: center;
+  font: inherit;
 }
 
 dialog {
-    border-radius: var(--border-radius);
-    border: 2px double var(--main-accent);
-    color: var(--main-theme);
-    background-color: var(--main-accent);
+  border-radius: var(--border-radius);
+  border: 2px double var(--main-accent);
+  color: var(--main-theme);
+  background-color: var(--main-accent);
 }
 
 input:not([type="checkbox"]) {
-    border-radius: var(--border-radius);
+  border-radius: var(--border-radius);
 }
 
 h1 {
-    color: var(--main-accent);
-    font-size: 6rem;
-    text-align: center;
-    flex: 1;
-    font-family: 'Roboto Mono', sans-serif;
+  color: var(--main-accent);
+  font-size: 6rem;
+  text-align: center;
+  flex: 1;
+  font-family: "Roboto Mono", sans-serif;
 }
 
 header {
-    gap: 2rem;
-    background-color: var(--form-clr);
-    padding: 1rem 4.5rem;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+  gap: 2rem;
+  background-color: var(--form-clr);
+  padding: 1rem 4.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--main-theme);
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-theme);
+  position: relative;
 }
 
 .books-display {
-    flex: 1;
-    counter-reset: book;
-    display: grid;
-    grid: auto-flow 24rem / repeat(auto-fit, minmax(16rem, 17rem));
-    gap: 5rem;
-    padding: 2.5rem 15rem;
-    justify-content: center;
+  flex: 1;
+  counter-reset: book;
+  display: grid;
+  grid: auto-flow 24rem / repeat(auto-fit, minmax(16rem, 17rem));
+  gap: 5rem;
+  padding: 2.5rem 15rem;
+  justify-content: center;
 }
 
-.books-display>section::before {
-    counter-increment: book;
-    content: counter(book) '. ';
-    color: var(--main-accent);
-    position: absolute;
-    left: -50px;
-    font-size: 1.7rem;
+.books-display > section::before {
+  counter-increment: book;
+  content: counter(book) ". ";
+  color: var(--main-accent);
+  position: absolute;
+  left: -50px;
+  font-size: 1.7rem;
 }
 
 dialog button {
-    width: 50%;
-    appearance: none;
-    border: none;
-    font-size: inherit;
-    display: block;
-    margin: auto;
+  width: 50%;
+  appearance: none;
+  border: none;
+  font-size: inherit;
+  display: block;
+  margin: auto;
 }
 
 .modal-content button:first-of-type {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 button {
-    background-color: var(--main-accent);
-    color: var(--form-clr);
-    border: 2px solid var(--main-accent);
+  background-color: var(--main-accent);
+  color: var(--form-clr);
+  border: 2px solid var(--main-accent);
 }
 
 .modal-content button {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 header button {
-    padding: 0.3rem;
+  padding: 0.3rem;
 }
 
 .modal-content button {
-    padding: 0.6rem;
+  padding: 0.6rem;
 }
 
 i {
-    width: 20px;
-    height: 20px;
-    font-size: 23px;
-    color: var(--main-theme);
+  width: 20px;
+  height: 20px;
+  font-size: 23px;
+  color: var(--main-theme);
 }
 
 header button {
-    padding: 0.8rem 1rem;
-    font-size: var(--big-btn-font-size);
-    flex: 1;
-    align-items: center;
-    min-width: 15rem;
+  padding: 0.8rem 1rem;
+  font-size: var(--big-btn-font-size);
+  flex: 1;
+  align-items: center;
+  min-width: 15rem;
 }
 
 header .wrapper {
-    display: flex;
-    gap: 1rem;
-    margin: 0 auto;
-    min-width: max-content;
-    align-items: center;
+  display: flex;
+  gap: 1rem;
+  margin: 0 auto;
+  min-width: max-content;
+  align-items: center;
 }
 
 .form-inputs-layout {
-    gap: 1rem;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr;
-    grid-auto-rows: 1fr;
-    align-items: center;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr auto 1fr auto 1fr auto;
+  grid-auto-rows: 1fr;
+  align-items: center;
+}
+
+.error {
+    grid-column: 1 / span 2;
 }
 
 [type="checkbox"] {
-    justify-self: start;
-    width: 1.3rem;
-    height: 1.3rem;
+  justify-self: start;
+  width: 1.3rem;
+  height: 1.3rem;
 }
 
 .add {
-    text-align: center;
+  text-align: center;
 }
 
 /*Style dialog*/
 
 dialog::backdrop {
-    background-color: #040b14e6;
+  background-color: #040b14e6;
 }
 
 dialog {
-    color: var(--main-accent);
-    font-size: var(--big-btn-font-size);
-    font-weight: 800;
-    padding: 2.5rem;
-    min-height: 34rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #0c1c33;
+  color: var(--main-accent);
+  font-size: var(--big-btn-font-size);
+  font-weight: 800;
+  padding: 2.5rem;
+  min-height: 34rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0c1c33;
 }
 
 dialog h2 {
-    text-align: center;
-    margin-bottom: 2.1rem;
-    font-size: 3.2rem;
+  text-align: center;
+  margin-bottom: 2.1rem;
+  font-size: 3.2rem;
 }
 
 dialog input {
-    appearance: none;
-    background-color: #07101d;
-    color: white;
-    border: none;
-    padding: 0.8rem 0.4rem;
-    font-size: 1.3rem;
-    font-weight: 800;
+  appearance: none;
+  background-color: #07101d;
+  color: white;
+  border: none;
+  padding: 0.8rem 0.4rem;
+  font-size: 1.3rem;
+  font-weight: 800;
 }
 
 /*End style dialog*/
@@ -245,46 +249,74 @@ dialog input {
 /*Style checkbox*/
 
 input[type="checkbox"] {
-    transform: translateY(-0.075em);
-    -webkit-appearance: none;
-    display: grid;
-    place-content: center;
+  transform: translateY(-0.075em);
+  -webkit-appearance: none;
+  display: grid;
+  place-content: center;
 }
 
 input[type="checkbox"]::before {
-    content: "";
-    width: 1em;
-    height: 1em;
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-    transform: scale(0);
-    transform-origin: bottom left;
-    transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--main-accent);
-    /* Windows High Contrast Mode */
-    background-color: CanvasText;
+  content: "";
+  width: 1em;
+  height: 1em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--main-accent);
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
 }
 
 input[type="checkbox"]:checked::before {
-    transform: scale(1);
+  transform: scale(1);
 }
 
 input[type="checkbox"]:focus {
-    outline: 1.7px solid white;
-    outline-offset: max(1px, 0.05em);
+  outline: 1.7px solid white;
+  outline-offset: max(1px, 0.05em);
 }
 
 /*End checkbox styling*/
 
 button:hover {
-    background-color: #fa7e70;
-    border-color: #fc7171;
-    box-shadow: inset 0 0 20px #fc7171, inset 0 0 30px #d56b6b, 0 0 40px #fc7171;
+  background-color: #fa7e70;
+  border-color: #fc7171;
+  box-shadow: inset 0 0 20px #fc7171, inset 0 0 30px #d56b6b, 0 0 40px #fc7171;
 }
 
 button:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 button {
-    transition: transform 0.05s ease-in;
+  transition: transform 0.05s ease-in;
+}
+
+/* Error styling */
+/* This is our style for the invalid fields */
+input:invalid {
+  border-color: rgb(216, 21, 21);
+  background-color: #fdd;
+}
+
+input:focus:invalid {
+  outline: none;
+}
+
+/* This is the style of our error messages */
+.error {
+  width: 100%;
+  padding: 0;
+
+  font-size: 80%;
+  color: #102542;
+  background-color: rgb(216, 21, 21);
+  border-radius: 0 0 5px 5px;
+
+  box-sizing: border-box;
+}
+
+.error.active {
+  padding: 0.3em;
 }
