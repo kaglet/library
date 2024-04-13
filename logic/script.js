@@ -174,6 +174,7 @@ let cancelBtn = document.querySelector('.cancel');
 let modal = document.querySelector('.modal');
 let addBtn = document.querySelector('.add');
 let dialog = document.querySelector('dialog');
+let form = document.querySelector('form');
 
 cancelBtn.addEventListener('click', (e) => {
     e.preventDefault();
