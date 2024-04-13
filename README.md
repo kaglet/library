@@ -11,7 +11,7 @@ At full screen the tool should look like this:
 ## Features
 
 - Add, delete, edit books.
-- Local storage via the local storage javascript API.
+- Books are saved to local storage via the local storage javascript API.
 - Validation with dynamic error messages via the javascript constraint validation API.
 
 ## To add in future:
