@@ -1,6 +1,6 @@
 
 import storageManager from "../storage/storage_manager.js";
-import { validateAll } from "../validation/validation.js";
+import { validateAll, validateAuthor, validateTitle, validatePageNum, validateUrl } from "../validation/validation.js";
 
 function Book() { }
 
@@ -254,10 +254,17 @@ dialog.addEventListener('close', (e) => {
 
 /* VALIDATION */
 
-const form = document.querySelector("form");
-form.addEventListener("submit", (event) => {
-  validateAll();
-});
+// validateAll();
+
+const titleInput = document.getElementById("title");
+const authorInput = document.getElementById("author");
+const pageNumInput = document.getElementById("pageNum");
+const urlInput = document.getElementById("url");
+
+titleInput.addEventListener('input', validateTitle);
+authorInput.addEventListener('input', validateAuthor);
+pageNumInput.addEventListener('input', validatePageNum);
+urlInput.addEventListener('input', validateUrl);
 
 /* DEMO */
 
