@@ -1,14 +1,6 @@
 
 import storageManager from "../storage/storage_manager.js";
-
-let initialBooks = !localStorage.getItem("library") || localStorage.getItem("library") == undefined ? [] : storageManager.getAllBooks();
-let myLibrary = [];
-
-initialBooks.forEach(book => {
-    addBookToLibrary(book);
-});
-
-console.log("Library is ", myLibrary);
+import { validateAll } from "../validation/validation.js";
 
 function Book() { }
 
@@ -166,6 +158,17 @@ Book.prototype.info = function () {
     return info;
 };
 
+/* LOAD IN FROM LOCAL STORAGE IF PRESENT */
+
+let initialBooks = !localStorage.getItem("library") || localStorage.getItem("library") == undefined ? [] : storageManager.getAllBooks();
+let myLibrary = [];
+
+initialBooks.forEach(book => {
+    addBookToLibrary(book);
+});
+
+/* LOGIC */
+
 let doneBtn = document.querySelector('.done');
 let cancelBtn = document.querySelector('.cancel');
 let modal = document.querySelector('.modal');
@@ -185,7 +188,12 @@ doneBtn.addEventListener('click', (e) => {
     if (doneModeDetected) {
         dialog.returnValue = 'done';
     } // else dialog return value is already a card number of the card number and book id to be edited
-    dialog.close();
+    if (form.checkValidity()) {
+        dialog.close();
+        return;
+    } else {
+        validateAll();
+    }
 });
 
 addBtn.addEventListener('click', (e) => {
@@ -243,6 +251,15 @@ dialog.addEventListener('close', (e) => {
         storageManager.saveChanges(myLibrary);
     }
 });
+
+/* VALIDATION */
+
+const form = document.querySelector("form");
+form.addEventListener("submit", (event) => {
+  validateAll();
+});
+
+/* DEMO */
 
 let demoBtn = document.querySelector('.demo');
 demoBtn.addEventListener('click', () => {

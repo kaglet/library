@@ -191,7 +191,7 @@ header .wrapper {
   gap: 1rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr auto 1fr auto 1fr auto;
+  grid-template-rows: 1fr auto 1fr auto 1fr auto 1fr auto;
   grid-auto-rows: 1fr;
   align-items: center;
 }
@@ -295,12 +295,12 @@ button {
 
 /* Error styling */
 /* This is our style for the invalid fields */
-input:invalid {
-  border-color: rgb(216, 21, 21);
-  background-color: #fdd;
+dialog input:invalid {
+  /* border: 2px solid rgb(216, 21, 21); */
+  background-color: rgb(255, 173, 173);
 }
 
-input:focus:invalid {
+dialog input:focus:invalid {
   outline: none;
 }
 
